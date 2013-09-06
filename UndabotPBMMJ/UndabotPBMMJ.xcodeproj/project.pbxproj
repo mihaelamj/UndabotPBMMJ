@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A997403017D639ED00C4AD12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A997402F17D639ED00C4AD12 /* UIKit.framework */; };
+		A997403217D639ED00C4AD12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A997403117D639ED00C4AD12 /* Foundation.framework */; };
+		A997403417D639ED00C4AD12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A997403317D639ED00C4AD12 /* CoreGraphics.framework */; };
+		A997403A17D639ED00C4AD12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A997403817D639ED00C4AD12 /* InfoPlist.strings */; };
+		A997403C17D639ED00C4AD12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A997403B17D639ED00C4AD12 /* main.m */; };
+		A997404017D639ED00C4AD12 /* UPBMMJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A997403F17D639ED00C4AD12 /* UPBMMJAppDelegate.m */; };
+		A997404217D639ED00C4AD12 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A997404117D639ED00C4AD12 /* Default.png */; };
+		A997404417D639ED00C4AD12 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A997404317D639ED00C4AD12 /* Default@2x.png */; };
+		A997404617D639ED00C4AD12 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A997404517D639ED00C4AD12 /* Default-568h@2x.png */; };
+		A997404917D639ED00C4AD12 /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A997404717D639ED00C4AD12 /* iPhoneStoryboard.storyboard */; };
+		A9C6867A17D89C56005CAD0C /* UPBMMJPhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C6867917D89C56005CAD0C /* UPBMMJPhotosTableViewController.m */; };
+		A9C6867E17D89CB2005CAD0C /* InstagramPhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C6867D17D89CB2005CAD0C /* InstagramPhotosTableViewController.m */; };
+		A9C6868117D8A429005CAD0C /* UPBMMJImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C6868017D8A429005CAD0C /* UPBMMJImageViewController.m */; };
+		A9C6868417D8AD30005CAD0C /* PhotoFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C6868317D8AD30005CAD0C /* PhotoFetcher.m */; };
+		A9C6868817D8AD8F005CAD0C /* InstagramPhotoFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C6868717D8AD8F005CAD0C /* InstagramPhotoFetcher.m */; };
+		A9C6869517D9DB95005CAD0C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C6869417D9DB95005CAD0C /* SenTestingKit.framework */; };
+		A9C6869617D9DB95005CAD0C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A997402F17D639ED00C4AD12 /* UIKit.framework */; };
+		A9C6869717D9DB95005CAD0C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A997403117D639ED00C4AD12 /* Foundation.framework */; };
+		A9C6869D17D9DB95005CAD0C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9C6869B17D9DB95005CAD0C /* InfoPlist.strings */; };
+		A9C686A017D9DB95005CAD0C /* UNdabotPBMMJTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C6869F17D9DB95005CAD0C /* UNdabotPBMMJTest.m */; };
+		A9C686A617D9DC83005CAD0C /* instagram.txt in Resources */ = {isa = PBXBuildFile; fileRef = A9C686A517D9DC83005CAD0C /* instagram.txt */; };
+		A9C686A817D9DD33005CAD0C /* PhotoFetcher.h in Sources */ = {isa = PBXBuildFile; fileRef = A9C6868217D8AD30005CAD0C /* PhotoFetcher.h */; };
+		A9C686A917D9DD33005CAD0C /* PhotoFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C6868317D8AD30005CAD0C /* PhotoFetcher.m */; };
+		A9C686AA17D9DD33005CAD0C /* InstagramClient.h in Sources */ = {isa = PBXBuildFile; fileRef = A9C6868A17D8AE1B005CAD0C /* InstagramClient.h */; };
+		A9C686AB17D9DD33005CAD0C /* InstagramPhotoFetcher.h in Sources */ = {isa = PBXBuildFile; fileRef = A9C6868617D8AD8F005CAD0C /* InstagramPhotoFetcher.h */; };
+		A9C686AC17D9DD33005CAD0C /* InstagramPhotoFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C6868717D8AD8F005CAD0C /* InstagramPhotoFetcher.m */; };
+		A9C686AF17D9F994005CAD0C /* GlobalNetActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C686AE17D9F994005CAD0C /* GlobalNetActivity.m */; };
+		A9C686B017D9FC9E005CAD0C /* GlobalNetActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C686AE17D9F994005CAD0C /* GlobalNetActivity.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A997402C17D639ED00C4AD12 /* UndabotPBMMJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UndabotPBMMJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A997402F17D639ED00C4AD12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A997403117D639ED00C4AD12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A997403317D639ED00C4AD12 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A997403717D639ED00C4AD12 /* UndabotPBMMJ-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UndabotPBMMJ-Info.plist"; sourceTree = "<group>"; };
+		A997403917D639ED00C4AD12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A997403B17D639ED00C4AD12 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A997403D17D639ED00C4AD12 /* UndabotPBMMJ-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UndabotPBMMJ-Prefix.pch"; sourceTree = "<group>"; };
+		A997403E17D639ED00C4AD12 /* UPBMMJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UPBMMJAppDelegate.h; sourceTree = "<group>"; };
+		A997403F17D639ED00C4AD12 /* UPBMMJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UPBMMJAppDelegate.m; sourceTree = "<group>"; };
+		A997404117D639ED00C4AD12 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		A997404317D639ED00C4AD12 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A997404517D639ED00C4AD12 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A997404817D639ED00C4AD12 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhoneStoryboard.storyboard; sourceTree = "<group>"; };
+		A9C6867817D89C56005CAD0C /* UPBMMJPhotosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPBMMJPhotosTableViewController.h; path = Controllers/UPBMMJPhotosTableViewController.h; sourceTree = "<group>"; };
+		A9C6867917D89C56005CAD0C /* UPBMMJPhotosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPBMMJPhotosTableViewController.m; path = Controllers/UPBMMJPhotosTableViewController.m; sourceTree = "<group>"; };
+		A9C6867C17D89CB2005CAD0C /* InstagramPhotosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstagramPhotosTableViewController.h; path = Controllers/InstagramPhotosTableViewController.h; sourceTree = "<group>"; };
+		A9C6867D17D89CB2005CAD0C /* InstagramPhotosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InstagramPhotosTableViewController.m; path = Controllers/InstagramPhotosTableViewController.m; sourceTree = "<group>"; };
+		A9C6867F17D8A429005CAD0C /* UPBMMJImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPBMMJImageViewController.h; sourceTree = "<group>"; };
+		A9C6868017D8A429005CAD0C /* UPBMMJImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPBMMJImageViewController.m; sourceTree = "<group>"; };
+		A9C6868217D8AD30005CAD0C /* PhotoFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoFetcher.h; sourceTree = "<group>"; };
+		A9C6868317D8AD30005CAD0C /* PhotoFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoFetcher.m; sourceTree = "<group>"; };
+		A9C6868617D8AD8F005CAD0C /* InstagramPhotoFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstagramPhotoFetcher.h; path = UndabotPBMMJ/PhotoFetcher/InstagramPhotoFetcher.h; sourceTree = "<group>"; };
+		A9C6868717D8AD8F005CAD0C /* InstagramPhotoFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InstagramPhotoFetcher.m; path = UndabotPBMMJ/PhotoFetcher/InstagramPhotoFetcher.m; sourceTree = "<group>"; };
+		A9C6868A17D8AE1B005CAD0C /* InstagramClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstagramClient.h; path = UndabotPBMMJ/PhotoFetcher/InstagramClient.h; sourceTree = "<group>"; };
+		A9C6869317D9DB95005CAD0C /* UNdabotPBMMJTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UNdabotPBMMJTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9C6869417D9DB95005CAD0C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		A9C6869A17D9DB95005CAD0C /* UNdabotPBMMJTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UNdabotPBMMJTest-Info.plist"; sourceTree = "<group>"; };
+		A9C6869C17D9DB95005CAD0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A9C6869E17D9DB95005CAD0C /* UNdabotPBMMJTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UNdabotPBMMJTest.h; sourceTree = "<group>"; };
+		A9C6869F17D9DB95005CAD0C /* UNdabotPBMMJTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UNdabotPBMMJTest.m; sourceTree = "<group>"; };
+		A9C686A117D9DB95005CAD0C /* UNdabotPBMMJTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UNdabotPBMMJTest-Prefix.pch"; sourceTree = "<group>"; };
+		A9C686A517D9DC83005CAD0C /* instagram.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = instagram.txt; path = data/instagram.txt; sourceTree = "<group>"; };
+		A9C686AD17D9F994005CAD0C /* GlobalNetActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalNetActivity.h; sourceTree = "<group>"; };
+		A9C686AE17D9F994005CAD0C /* GlobalNetActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalNetActivity.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A997402917D639ED00C4AD12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A997403017D639ED00C4AD12 /* UIKit.framework in Frameworks */,
+				A997403217D639ED00C4AD12 /* Foundation.framework in Frameworks */,
+				A997403417D639ED00C4AD12 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9C6868F17D9DB95005CAD0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9C6869517D9DB95005CAD0C /* SenTestingKit.framework in Frameworks */,
+				A9C6869617D9DB95005CAD0C /* UIKit.framework in Frameworks */,
+				A9C6869717D9DB95005CAD0C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A997402317D639ED00C4AD12 = {
+			isa = PBXGroup;
+			children = (
+				A997403517D639ED00C4AD12 /* UndabotPBMMJ */,
+				A9C6869817D9DB95005CAD0C /* UNdabotPBMMJTest */,
+				A997402E17D639ED00C4AD12 /* Frameworks */,
+				A997402D17D639ED00C4AD12 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A997402D17D639ED00C4AD12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A997402C17D639ED00C4AD12 /* UndabotPBMMJ.app */,
+				A9C6869317D9DB95005CAD0C /* UNdabotPBMMJTest.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A997402E17D639ED00C4AD12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A997402F17D639ED00C4AD12 /* UIKit.framework */,
+				A997403117D639ED00C4AD12 /* Foundation.framework */,
+				A997403317D639ED00C4AD12 /* CoreGraphics.framework */,
+				A9C6869417D9DB95005CAD0C /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A997403517D639ED00C4AD12 /* UndabotPBMMJ */ = {
+			isa = PBXGroup;
+			children = (
+				A997404717D639ED00C4AD12 /* iPhoneStoryboard.storyboard */,
+				A9C6867B17D89C5B005CAD0C /* Controllers */,
+				A9C6868517D8AD3A005CAD0C /* PhotoFetcher */,
+				A997403617D639ED00C4AD12 /* Supporting Files */,
+			);
+			path = UndabotPBMMJ;
+			sourceTree = "<group>";
+		};
+		A997403617D639ED00C4AD12 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9C686AD17D9F994005CAD0C /* GlobalNetActivity.h */,
+				A9C686AE17D9F994005CAD0C /* GlobalNetActivity.m */,
+				A997403E17D639ED00C4AD12 /* UPBMMJAppDelegate.h */,
+				A997403F17D639ED00C4AD12 /* UPBMMJAppDelegate.m */,
+				A997403717D639ED00C4AD12 /* UndabotPBMMJ-Info.plist */,
+				A997403817D639ED00C4AD12 /* InfoPlist.strings */,
+				A997403B17D639ED00C4AD12 /* main.m */,
+				A997403D17D639ED00C4AD12 /* UndabotPBMMJ-Prefix.pch */,
+				A997404117D639ED00C4AD12 /* Default.png */,
+				A997404317D639ED00C4AD12 /* Default@2x.png */,
+				A997404517D639ED00C4AD12 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A9C6867B17D89C5B005CAD0C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A9C6867817D89C56005CAD0C /* UPBMMJPhotosTableViewController.h */,
+				A9C6867917D89C56005CAD0C /* UPBMMJPhotosTableViewController.m */,
+				A9C6867C17D89CB2005CAD0C /* InstagramPhotosTableViewController.h */,
+				A9C6867D17D89CB2005CAD0C /* InstagramPhotosTableViewController.m */,
+				A9C6867F17D8A429005CAD0C /* UPBMMJImageViewController.h */,
+				A9C6868017D8A429005CAD0C /* UPBMMJImageViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A9C6868517D8AD3A005CAD0C /* PhotoFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				A9C6868217D8AD30005CAD0C /* PhotoFetcher.h */,
+				A9C6868317D8AD30005CAD0C /* PhotoFetcher.m */,
+				A9C6868A17D8AE1B005CAD0C /* InstagramClient.h */,
+				A9C6868617D8AD8F005CAD0C /* InstagramPhotoFetcher.h */,
+				A9C6868717D8AD8F005CAD0C /* InstagramPhotoFetcher.m */,
+			);
+			name = PhotoFetcher;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		A9C6869817D9DB95005CAD0C /* UNdabotPBMMJTest */ = {
+			isa = PBXGroup;
+			children = (
+				A9C686A717D9DC8A005CAD0C /* data */,
+				A9C6869E17D9DB95005CAD0C /* UNdabotPBMMJTest.h */,
+				A9C6869F17D9DB95005CAD0C /* UNdabotPBMMJTest.m */,
+				A9C6869917D9DB95005CAD0C /* Supporting Files */,
+			);
+			path = UNdabotPBMMJTest;
+			sourceTree = "<group>";
+		};
+		A9C6869917D9DB95005CAD0C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9C6869A17D9DB95005CAD0C /* UNdabotPBMMJTest-Info.plist */,
+				A9C6869B17D9DB95005CAD0C /* InfoPlist.strings */,
+				A9C686A117D9DB95005CAD0C /* UNdabotPBMMJTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A9C686A717D9DC8A005CAD0C /* data */ = {
+			isa = PBXGroup;
+			children = (
+				A9C686A517D9DC83005CAD0C /* instagram.txt */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A997402B17D639ED00C4AD12 /* UndabotPBMMJ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A997404F17D639ED00C4AD12 /* Build configuration list for PBXNativeTarget "UndabotPBMMJ" */;
+			buildPhases = (
+				A997402817D639ED00C4AD12 /* Sources */,
+				A997402917D639ED00C4AD12 /* Frameworks */,
+				A997402A17D639ED00C4AD12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UndabotPBMMJ;
+			productName = UndabotPBMMJ;
+			productReference = A997402C17D639ED00C4AD12 /* UndabotPBMMJ.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A9C6869217D9DB95005CAD0C /* UNdabotPBMMJTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9C686A417D9DB95005CAD0C /* Build configuration list for PBXNativeTarget "UNdabotPBMMJTest" */;
+			buildPhases = (
+				A9C6868E17D9DB95005CAD0C /* Sources */,
+				A9C6868F17D9DB95005CAD0C /* Frameworks */,
+				A9C6869017D9DB95005CAD0C /* Resources */,
+				A9C6869117D9DB95005CAD0C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UNdabotPBMMJTest;
+			productName = UNdabotPBMMJTest;
+			productReference = A9C6869317D9DB95005CAD0C /* UNdabotPBMMJTest.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A997402417D639ED00C4AD12 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = UPBMMJ;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Token d.o.o.";
+			};
+			buildConfigurationList = A997402717D639ED00C4AD12 /* Build configuration list for PBXProject "UndabotPBMMJ" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A997402317D639ED00C4AD12;
+			productRefGroup = A997402D17D639ED00C4AD12 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A997402B17D639ED00C4AD12 /* UndabotPBMMJ */,
+				A9C6869217D9DB95005CAD0C /* UNdabotPBMMJTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A997402A17D639ED00C4AD12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A997403A17D639ED00C4AD12 /* InfoPlist.strings in Resources */,
+				A997404217D639ED00C4AD12 /* Default.png in Resources */,
+				A997404417D639ED00C4AD12 /* Default@2x.png in Resources */,
+				A997404617D639ED00C4AD12 /* Default-568h@2x.png in Resources */,
+				A997404917D639ED00C4AD12 /* iPhoneStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9C6869017D9DB95005CAD0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9C6869D17D9DB95005CAD0C /* InfoPlist.strings in Resources */,
+				A9C686A617D9DC83005CAD0C /* instagram.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A9C6869117D9DB95005CAD0C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A997402817D639ED00C4AD12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9C686B017D9FC9E005CAD0C /* GlobalNetActivity.m in Sources */,
+				A997403C17D639ED00C4AD12 /* main.m in Sources */,
+				A997404017D639ED00C4AD12 /* UPBMMJAppDelegate.m in Sources */,
+				A9C6867A17D89C56005CAD0C /* UPBMMJPhotosTableViewController.m in Sources */,
+				A9C6867E17D89CB2005CAD0C /* InstagramPhotosTableViewController.m in Sources */,
+				A9C6868117D8A429005CAD0C /* UPBMMJImageViewController.m in Sources */,
+				A9C6868417D8AD30005CAD0C /* PhotoFetcher.m in Sources */,
+				A9C6868817D8AD8F005CAD0C /* InstagramPhotoFetcher.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9C6868E17D9DB95005CAD0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9C686A817D9DD33005CAD0C /* PhotoFetcher.h in Sources */,
+				A9C686A917D9DD33005CAD0C /* PhotoFetcher.m in Sources */,
+				A9C686AA17D9DD33005CAD0C /* InstagramClient.h in Sources */,
+				A9C686AB17D9DD33005CAD0C /* InstagramPhotoFetcher.h in Sources */,
+				A9C686AC17D9DD33005CAD0C /* InstagramPhotoFetcher.m in Sources */,
+				A9C686A017D9DB95005CAD0C /* UNdabotPBMMJTest.m in Sources */,
+				A9C686AF17D9F994005CAD0C /* GlobalNetActivity.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A997403817D639ED00C4AD12 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A997403917D639ED00C4AD12 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A997404717D639ED00C4AD12 /* iPhoneStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A997404817D639ED00C4AD12 /* en */,
+			);
+			name = iPhoneStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		A9C6869B17D9DB95005CAD0C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9C6869C17D9DB95005CAD0C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A997404D17D639ED00C4AD12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A997404E17D639ED00C4AD12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A997405017D639ED00C4AD12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UndabotPBMMJ/UndabotPBMMJ-Prefix.pch";
+				INFOPLIST_FILE = "UndabotPBMMJ/UndabotPBMMJ-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A997405117D639ED00C4AD12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UndabotPBMMJ/UndabotPBMMJ-Prefix.pch";
+				INFOPLIST_FILE = "UndabotPBMMJ/UndabotPBMMJ-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A9C686A217D9DB95005CAD0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UNdabotPBMMJTest/UNdabotPBMMJTest-Prefix.pch";
+				INFOPLIST_FILE = "UNdabotPBMMJTest/UNdabotPBMMJTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		A9C686A317D9DB95005CAD0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UNdabotPBMMJTest/UNdabotPBMMJTest-Prefix.pch";
+				INFOPLIST_FILE = "UNdabotPBMMJTest/UNdabotPBMMJTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A997402717D639ED00C4AD12 /* Build configuration list for PBXProject "UndabotPBMMJ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A997404D17D639ED00C4AD12 /* Debug */,
+				A997404E17D639ED00C4AD12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A997404F17D639ED00C4AD12 /* Build configuration list for PBXNativeTarget "UndabotPBMMJ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A997405017D639ED00C4AD12 /* Debug */,
+				A997405117D639ED00C4AD12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9C686A417D9DB95005CAD0C /* Build configuration list for PBXNativeTarget "UNdabotPBMMJTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9C686A217D9DB95005CAD0C /* Debug */,
+				A9C686A317D9DB95005CAD0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A997402417D639ED00C4AD12 /* Project object */;
+}
