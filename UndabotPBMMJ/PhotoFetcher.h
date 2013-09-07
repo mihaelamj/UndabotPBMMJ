@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UPBMMJTopImages.h"
 
 @interface PhotoFetcher : NSObject
 
 @property (strong, nonatomic) NSString *URL;
 @property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSMutableArray *photos;
+@property (strong, nonatomic) UPBMMJTopImages *images;
 
-
-- (NSMutableArray *)photoDictToArrayDict:(NSDictionary *)jsonDict; //abstarct
+- (void)photoDictToImages :(NSDictionary *)jsonDict; //abstarct
 
 - (NSString *)fetchURLString;
 
@@ -23,13 +23,17 @@
 
 - (NSString *)name;
 
+// Image properties
+
 - (NSString *)userForRow:(int)row;
 - (NSString *)captionForRow:(int)row;
-- (NSString *)thumbURLForRow:(int)row;//abstarct
-- (NSString *)imageURLForRow:(int)row;//abstarct
+- (NSString *)fullImageURLForRow:(int)row;
+- (NSString *)thumbImageURLForRow:(int)row;
 
-- (NSString *)getUserForRow:(int)row;
-- (NSString *)getCaptionForRow:(int)row;
+- (UIImage *)fullImageForRow:(int)row;
+- (UIImage *)thumbImageForRow:(int)row;
 
+- (void)setThumbImage:(UIImage *)image forRow:(int)row;
+- (void)setFullImage:(UIImage *)image forRow:(int)row;
 
 @end

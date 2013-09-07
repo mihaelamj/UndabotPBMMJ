@@ -35,6 +35,8 @@
 		A9C686AC17D9DD33005CAD0C /* InstagramPhotoFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C6868717D8AD8F005CAD0C /* InstagramPhotoFetcher.m */; };
 		A9C686AF17D9F994005CAD0C /* GlobalNetActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C686AE17D9F994005CAD0C /* GlobalNetActivity.m */; };
 		A9C686B017D9FC9E005CAD0C /* GlobalNetActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C686AE17D9F994005CAD0C /* GlobalNetActivity.m */; };
+		A9C686B317DA189E005CAD0C /* UPBMMJImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C686B217DA189E005CAD0C /* UPBMMJImage.m */; };
+		A9C686B717DA2BD6005CAD0C /* UPBMMJTopImages.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C686B617DA2BD6005CAD0C /* UPBMMJTopImages.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,10 @@
 		A9C686A517D9DC83005CAD0C /* instagram.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = instagram.txt; path = data/instagram.txt; sourceTree = "<group>"; };
 		A9C686AD17D9F994005CAD0C /* GlobalNetActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalNetActivity.h; sourceTree = "<group>"; };
 		A9C686AE17D9F994005CAD0C /* GlobalNetActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalNetActivity.m; sourceTree = "<group>"; };
+		A9C686B117DA189D005CAD0C /* UPBMMJImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPBMMJImage.h; path = Model/UPBMMJImage.h; sourceTree = "<group>"; };
+		A9C686B217DA189E005CAD0C /* UPBMMJImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPBMMJImage.m; path = Model/UPBMMJImage.m; sourceTree = "<group>"; };
+		A9C686B517DA2BD6005CAD0C /* UPBMMJTopImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPBMMJTopImages.h; path = Model/UPBMMJTopImages.h; sourceTree = "<group>"; };
+		A9C686B617DA2BD6005CAD0C /* UPBMMJTopImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPBMMJTopImages.m; path = Model/UPBMMJTopImages.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +180,7 @@
 		A9C6868517D8AD3A005CAD0C /* PhotoFetcher */ = {
 			isa = PBXGroup;
 			children = (
+				A9C686B417DA18AA005CAD0C /* Model */,
 				A9C6868217D8AD30005CAD0C /* PhotoFetcher.h */,
 				A9C6868317D8AD30005CAD0C /* PhotoFetcher.m */,
 				A9C6868A17D8AE1B005CAD0C /* InstagramClient.h */,
@@ -211,6 +218,17 @@
 				A9C686A517D9DC83005CAD0C /* instagram.txt */,
 			);
 			name = data;
+			sourceTree = "<group>";
+		};
+		A9C686B417DA18AA005CAD0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A9C686B117DA189D005CAD0C /* UPBMMJImage.h */,
+				A9C686B217DA189E005CAD0C /* UPBMMJImage.m */,
+				A9C686B517DA2BD6005CAD0C /* UPBMMJTopImages.h */,
+				A9C686B617DA2BD6005CAD0C /* UPBMMJTopImages.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +350,8 @@
 				A9C6868117D8A429005CAD0C /* UPBMMJImageViewController.m in Sources */,
 				A9C6868417D8AD30005CAD0C /* PhotoFetcher.m in Sources */,
 				A9C6868817D8AD8F005CAD0C /* InstagramPhotoFetcher.m in Sources */,
+				A9C686B317DA189E005CAD0C /* UPBMMJImage.m in Sources */,
+				A9C686B717DA2BD6005CAD0C /* UPBMMJTopImages.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

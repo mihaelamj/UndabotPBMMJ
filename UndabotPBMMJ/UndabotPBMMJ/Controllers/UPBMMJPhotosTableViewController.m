@@ -32,9 +32,14 @@
         if (indexPath) {
             if ([segue.identifier isEqualToString:SHOW_IMAGE_SEGUE]) {
                 if ([segue.destinationViewController respondsToSelector:@selector(setImageURL:)]) {
-                    NSURL *url = [NSURL URLWithString:[self.photoFetcher imageURLForRow:indexPath.row]];
-                    [segue.destinationViewController performSelector:@selector(setImageURL:) withObject:url];
-                    [segue.destinationViewController setTitle:[self.photoFetcher captionForRow:indexPath.row]];
+                    NSString *urlString = [self.photoFetcher fullImageURLForRow:indexPath.row];
+                    if (urlString) {
+                        NSURL *url = [NSURL URLWithString:urlString];
+                        if (url) {
+                            [segue.destinationViewController performSelector:@selector(setImageURL:) withObject:url];
+                            [segue.destinationViewController setTitle:[self.photoFetcher captionForRow:indexPath.row]];
+                        }
+                    }
                 }
             }
         }
@@ -51,23 +56,54 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.photoFetcher.photos count];
+    return [self.photoFetcher.images count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:PHOTO_CELL_NAME forIndexPath:indexPath];
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PhotoCell" forIndexPath:indexPath];
-    
-    NSLog(@"caption: %@", [self.photoFetcher captionForRow:indexPath.row]);
-    NSLog(@"user: %@", [self.photoFetcher userForRow:indexPath.row]);
-    NSLog(@"thumb: %@", [self.photoFetcher thumbURLForRow:indexPath.row]);
-    NSLog(@"image: %@ \n", [self.photoFetcher imageURLForRow:indexPath.row]);
     
     cell.textLabel.text = [self.photoFetcher captionForRow:indexPath.row];
     cell.detailTextLabel.text = [self.photoFetcher userForRow:indexPath.row];
-//    cell.imageView.image = [UIImage image]];
-
+    
+    NSString *thumbURL = [self.photoFetcher thumbImageURLForRow:indexPath.row];
+    
+    if (thumbURL) {
+        UIImage *thumbImage = [self.photoFetcher thumbImageForRow:indexPath.row];
+        
+        if (!thumbImage) {
+            
+            NSLog(@"No thumb for cell : %d", indexPath.row);
+            
+            dispatch_queue_t q = dispatch_queue_create("Thumbnail Web Photo", 0);
+            dispatch_async(q, ^{
+                
+                [GlobalNetActivity show];
+                NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:thumbURL]];
+                [GlobalNetActivity hide];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    UITableViewCell *cellToUpdate = [self.tableView cellForRowAtIndexPath:indexPath]; // create a copy of the cell to avoid keeping a strong pointer to "cell" since that one may have been reused by
+                    UIImage *newThumb = [UIImage imageWithData:imageData];
+                    
+                    NSLog(@"Created new thumb: %@ for cell: %d", thumbURL, indexPath.row);
+                    
+                    [self.photoFetcher setThumbImage:newThumb forRow:indexPath.row];
+                    cellToUpdate.imageView.image = newThumb;
+                    
+                    NSLog(@"Added thumb to cell : %d", indexPath.row);
+                    
+                    [cellToUpdate setNeedsLayout];
+                });
+            });
+            
+        } else {
+            NSLog(@"Cell: %d reusing thumb: %@", indexPath.row, thumbURL);
+            cell.imageView.image = thumbImage;
+            [cell setNeedsLayout];
+        }
+    }
+    
     return cell;
 }
 
@@ -78,20 +114,12 @@
     [self.refreshControl beginRefreshing];
     dispatch_queue_t loadSO= dispatch_queue_create("Photos data fetcher", NULL);
     dispatch_async(loadSO, ^{
-//        [NSThread sleepForTimeInterval:2.0];//simulate long operation
         [GlobalNetActivity show];
         NSString *photoDataString = [self.photoFetcher fetchURLString];
         [GlobalNetActivity hide];
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.photoFetcher updatePhotosFromString:photoDataString];
-            
-#pragma mark - Change to update each cell image in another thread
-            //update table View
-            //NSURL *url = [NSURL URLWithString:[self.photoFetcher thumbURLForRow:indexPath.row]];
             [self.tableView reloadData];
-            //update table View
-            
             [self.refreshControl endRefreshing];
         });
     });

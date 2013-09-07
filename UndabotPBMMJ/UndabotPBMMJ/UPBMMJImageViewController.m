@@ -46,7 +46,7 @@
     self.scrollView.minimumZoomScale = 0.2;
     self.scrollView.maximumZoomScale = 5.0;
     self.scrollView.delegate = self;
-    [self resetImage]; //needs here too
+    [self resetImage]; 
 }
 
 - (void)resetImage
@@ -60,8 +60,6 @@
         dispatch_queue_t downloadQueue = dispatch_queue_create("One image fetcher", NULL);
         
         dispatch_async(downloadQueue, ^{ //1. get in another thread
-            //simulate long operation
-            //            [NSThread sleepForTimeInterval:2.0];
             
             [GlobalNetActivity show];
             NSData *imageData = [[NSData alloc] initWithContentsOfURL:self.imageURL];

@@ -47,16 +47,9 @@
 
 #pragma mark - Overrides
 
-#define INDEX_USER 0
-#define INDEX_CAPTION 1
-#define INDEX_THUMB 2
-#define INDEX_IMAGE 3
-
-- (NSMutableArray *)photoDictToArrayDict :(NSDictionary *)jsonDict //abstarct
+- (void)photoDictToImages :(NSDictionary *)jsonDict //abstarct
 {
-    //parse photos dictionary into array of array
-    NSMutableArray *results = [[NSMutableArray alloc] init];
-    
+    //parse photos dictionary into array of UPBMMJTopImages    
     NSArray *dataArray = [jsonDict valueForKeyPath:INSTAGRAM_DATA];
     for (NSDictionary *oneDataDict in dataArray) {
         
@@ -77,33 +70,8 @@
         NSDictionary *userDict = [oneDataDict valueForKeyPath:INSTAGRAM_USER];
         if (userDict) user = [userDict valueForKey:INSTAGRAM_USER_NAME];
         
-        if (thumbImage && fullImage) [results addObject:@[user, caption, thumbImage, fullImage]];
+        [self.images addImageURL:fullImage withThumb:thumbImage forUser:user andTitle:caption];
     }
-    
-    if (![results count]) return nil;
-    return results;
 }
-
-
-- (NSString *)getUserForRow:(int)row
-{
-    return [[self.photos objectAtIndex:row] objectAtIndex:INDEX_USER];
-}
-
-- (NSString *)getCaptionForRow:(int)row
-{
-    return [[self.photos objectAtIndex:row] objectAtIndex:INDEX_CAPTION];
-}
-
-- (NSString *)thumbURLForRow:(int)row
-{
-    return [[self.photos objectAtIndex:row] objectAtIndex:INDEX_THUMB];
-}
-
-- (NSString *)imageURLForRow:(int)row
-{
-    return [[self.photos objectAtIndex:row] objectAtIndex:INDEX_IMAGE];
-}
-
 
 @end

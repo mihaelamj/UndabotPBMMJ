@@ -10,6 +10,7 @@
 
 @implementation PhotoFetcher
 
+
 #pragma mark - Properties
 
 - (NSString *)name
@@ -17,49 +18,23 @@
     return _name ? _name : @"Unknown Photos";
 }
 
+- (UPBMMJTopImages *)images
+{
+    if (!_images) _images = [[UPBMMJTopImages alloc] init];
+    return _images;
+}
+
 #pragma mark - Overrides
 
-- (NSMutableArray *)photoDictToArrayDict :(NSDictionary *)jsonDict //abstarct
+- (void)photoDictToImages :(NSDictionary *)jsonDict //abstarct
 {
     NSException *e = [NSException
-                      exceptionWithName:@"PhotoFetcher-photoDictToArray"
+                      exceptionWithName:@"PhotoFetcher-photoDictToImages"
                       reason:@"*** This method needs overriding!"
                       userInfo:nil];
     @throw e;
-    return nil;
 }
 
-- (NSString *)getUserForRow:(int)row
-{
-    return nil;
-}
-
-- (NSString *)getCaptionForRow:(int)row
-{
-    return nil;
-}
-
-- (NSString *)userForRow:(int)row
-{
-    if (![self getUserForRow:row]) return @"none";
-    return [self getUserForRow:row];
-}
-
-- (NSString *)captionForRow:(int)row
-{
-    if (![self getUserForRow:row]) return @"?";
-    return [self getUserForRow:row];
-}
-
-- (NSString *)thumbURLForRow:(int)row
-{
-    return nil;
-}
-
-- (NSString *)imageURLForRow:(int)row
-{
-    return nil;
-}
 
 #pragma mark - Fetching
 
@@ -87,8 +62,72 @@
     if (error) {
         NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
         return;
-    } else if (resultDict) self.photos = [self photoDictToArrayDict:resultDict];
-    NSLog(@"self.photos:\n %@", self.photos);
+    } else if (resultDict) {
+        self.images = nil;
+        [self photoDictToImages:resultDict];
+    }
+    NSLog(@"self.images:\n %@", self.images);
+}
+
+
+#pragma mark - Image properties
+
+- (NSString *)userForRow:(int)row
+{
+    UPBMMJImage *imageItem = [self.images imageForRow:row];
+    if (!imageItem) return @"unknown user";
+    return imageItem.user;
+}
+
+- (NSString *)captionForRow:(int)row
+{
+    UPBMMJImage *imageItem = [self.images imageForRow:row];
+    if (!imageItem) return @"no title";
+    return imageItem.title;
+}
+
+- (NSString *)fullImageURLForRow:(int)row
+{
+    UPBMMJImage *imageItem = [self.images imageForRow:row];
+    if (!imageItem) return nil;
+    return imageItem.fullImageURL;
+}
+
+- (NSString *)thumbImageURLForRow:(int)row
+{
+    UPBMMJImage *imageItem = [self.images imageForRow:row];
+    if (!imageItem) return nil;
+    return imageItem.thumbImageURL;
+}
+
+- (UIImage *)fullImageForRow:(int)row
+{
+    UPBMMJImage *imageItem = [self.images imageForRow:row];
+    if (!imageItem) return nil;
+    return imageItem.fullImage;
+}
+
+- (UIImage *)thumbImageForRow:(int)row
+{
+    UPBMMJImage *imageItem = [self.images imageForRow:row];
+    if (!imageItem) return nil;
+    return imageItem.thumbImage;
+}
+
+- (void)setThumbImage:(UIImage *)image forRow:(int)row
+{
+    if (!image) return;
+    UPBMMJImage *imageItem = [self.images imageForRow:row];
+    if (!imageItem) return;
+    imageItem.thumbImage = image;
+}
+
+- (void)setFullImage:(UIImage *)image forRow:(int)row
+{
+    if (!image) return;
+    UPBMMJImage *imageItem = [self.images imageForRow:row];
+    if (!imageItem) return;
+    imageItem.thumbImage = image;
 }
 
 
