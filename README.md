@@ -18,7 +18,3 @@
 * Objekt slike u obje verzije zadatka sadrži iste atribute (naslov / autor)
 * Ne postoje zahtjevi za dizajnom aplikacije
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 4d24dae53a9022aa49105dc63d75cf1f8ad5d61e
