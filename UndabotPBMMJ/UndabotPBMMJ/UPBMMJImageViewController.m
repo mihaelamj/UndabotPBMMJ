@@ -20,6 +20,13 @@
 
 #pragma mark - Properties
 
+- (void)setPhotoIndexPath:(NSIndexPath *)photoIndexPath
+{
+    _photoIndexPath = photoIndexPath;
+    NSString *URLStritng = [self.photoFetcher fullImageURLForRow:self.photoIndexPath.row];
+    self.imageURL = [NSURL URLWithString:URLStritng];
+}
+
 - (void)setImageURL:(NSURL *)imageURL
 {
     _imageURL = imageURL;
@@ -49,38 +56,53 @@
     [self resetImage]; 
 }
 
+- (void)updateScrollViewWithImage:(UIImage *)image
+{
+    self.scrollView.zoomScale = 1.0;
+    self.scrollView.contentSize = image.size;
+    self.imageView.image = image;
+    self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+    NSLog(@"Updated ScrollView");
+}
+
 - (void)resetImage
 {
     if (self.scrollView) {
         self.scrollView.contentSize = CGSizeZero;
         self.imageView.image = nil;
         
-        [self.graySpinner startAnimating];
+        UIImage *fullImage = [self.photoFetcher fullImageForRow:self.photoIndexPath.row];
         NSURL *imageURL = self.imageURL;
-        dispatch_queue_t downloadQueue = dispatch_queue_create("One image fetcher", NULL);
         
-        dispatch_async(downloadQueue, ^{ //1. get in another thread
+        if (fullImage) {
+            [self updateScrollViewWithImage:fullImage];
+        } else {
+            NSLog(@"No full image for : %d", self.photoIndexPath.row);
+            [self.graySpinner startAnimating];
+            dispatch_queue_t downloadQueue = dispatch_queue_create("One image fetcher", NULL);
             
-            [GlobalNetActivity show];
-            NSData *imageData = [[NSData alloc] initWithContentsOfURL:self.imageURL];
-            [GlobalNetActivity hide];
-            
-            UIImage *image = [[UIImage alloc] initWithData:imageData];
-            
-            //check if user clicked back
-            if (self.imageURL == imageURL) {
-                dispatch_async(dispatch_get_main_queue(), ^{ // 2. do in main queue
-                    if (image) {
-                        self.scrollView.zoomScale = 1.0;
-                        self.scrollView.contentSize = image.size;
-                        self.imageView.image = image;
-                        self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
-                    }
-                    [self.graySpinner stopAnimating];
-                });
-            }
-            
-        });
+            dispatch_async(downloadQueue, ^{ //1. get in another thread
+                [GlobalNetActivity show];
+                NSData *imageData = [[NSData alloc] initWithContentsOfURL:self.imageURL];
+                [GlobalNetActivity hide];
+                
+                UIImage *image = [[UIImage alloc] initWithData:imageData];
+                [self.photoFetcher setFullImage:image forRow:self.photoIndexPath.row];
+                
+                NSLog(@"Created new full image: %d", self.photoIndexPath.row);
+                
+                //check if user clicked back
+                if (self.imageURL == imageURL) {
+                    dispatch_async(dispatch_get_main_queue(), ^{ // 2. do in main queue
+                        if (image) {
+                            [self updateScrollViewWithImage:image];
+                        }
+                        [self.graySpinner stopAnimating];
+                    });
+                }
+                
+            });
+        }
     }
 }
 
@@ -90,7 +112,5 @@
 {
     return self.imageView;
 }
-
-
 
 @end

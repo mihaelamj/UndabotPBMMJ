@@ -36,7 +36,8 @@
                     if (urlString) {
                         NSURL *url = [NSURL URLWithString:urlString];
                         if (url) {
-                            [segue.destinationViewController performSelector:@selector(setImageURL:) withObject:url];
+                            [segue.destinationViewController performSelector:@selector(setPhotoFetcher:) withObject:self.photoFetcher];
+                            [segue.destinationViewController performSelector:@selector(setPhotoIndexPath:) withObject:indexPath];
                             [segue.destinationViewController setTitle:[self.photoFetcher captionForRow:indexPath.row]];
                         }
                     }
@@ -74,10 +75,8 @@
         if (!thumbImage) {
             
             NSLog(@"No thumb for cell : %d", indexPath.row);
-            
             dispatch_queue_t q = dispatch_queue_create("Thumbnail Web Photo", 0);
             dispatch_async(q, ^{
-                
                 [GlobalNetActivity show];
                 NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:thumbURL]];
                 [GlobalNetActivity hide];

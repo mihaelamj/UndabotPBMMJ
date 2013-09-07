@@ -127,7 +127,8 @@
     if (!image) return;
     UPBMMJImage *imageItem = [self.images imageForRow:row];
     if (!imageItem) return;
-    imageItem.thumbImage = image;
+    imageItem.fullImage = image;
+    NSLog(@"did set fullImage for row: %d", row);
 }
 
 
